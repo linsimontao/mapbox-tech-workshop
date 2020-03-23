@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Add a GeoJSON line</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; };
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoidGljaGltdXJhIiwiYSI6ImNrMnBpN3NxMzA0bGMzbnBpdmhqd2EyazQifQ.5ozS730sMWdKGe5gx32BJA';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [139.6580993752318,35.54201136779727],
+        zoom: 8
+    });
+
+    map.on('load', function() {
+        map.addLayer({
+            'id': 'route',
+            'type': 'line',
+            'source': {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                        'type': 'LineString',
+												'coordinates': [
+												[
+							            139.766159,
+							            35.682625
+							          ],
+							          [
+							            139.765961,
+							            35.682671
+							          ],
+							          [
+							            139.767563,
+							            35.684299
+							          ],
+							          [
+							            139.770935,
+							            35.683678
+							          ],
+							          [
+							            139.771225,
+							            35.685246
+							          ],
+							          [
+							            139.771423,
+							            35.684734
+							          ],
+							          [
+							            139.774323,
+							            35.684185
+							          ],
+							          [
+							            139.775299,
+							            35.684124
+							          ],
+							          [
+							            139.778244,
+							            35.68367
+							          ],
+							          [
+							            139.774399,
+							            35.677086
+							          ],
+							          [
+							            139.771652,
+							            35.670967
+							          ],
+							          [
+							            139.759659,
+							            35.659409
+							          ],
+							          [
+							            139.760223,
+							            35.654575
+							          ],
+							          [
+							            139.758591,
+							            35.649464
+							          ],
+							          [
+							            139.758606,
+							            35.638184
+							          ],
+							          [
+							            139.769257,
+							            35.634872
+							          ],
+							          [
+							            139.777588,
+							            35.636436
+							          ],
+							          [
+							            139.781555,
+							            35.633575
+							          ],
+							          [
+							            139.783386,
+							            35.630692
+							          ],
+							          [
+							            139.777206,
+							            35.627277
+							          ],
+							          [
+							            139.755981,
+							            35.611126
+							          ],
+							          [
+							            139.755371,
+							            35.585373
+							          ],
+							          [
+							            139.760666,
+							            35.569073
+							          ],
+							          [
+							            139.779663,
+							            35.558586
+							          ],
+							          [
+							            139.782303,
+							            35.556057
+							          ],
+							          [
+							            139.785324,
+							            35.553429
+							          ],
+							          [
+							            139.786331,
+							            35.553104
+							          ],
+							          [
+							            139.78949,
+							            35.548603
+							          ],
+							          [
+							            139.786911,
+							            35.546383
+							          ],
+							          [
+							            139.784943,
+							            35.548431
+							          ],
+							          [
+							            139.7827,
+							            35.551998
+							          ],
+							          [
+							            139.786331,
+							            35.553104
+							          ],
+							          [
+							            139.792801,
+							            35.541904
+							          ],
+							          [
+							            139.794846,
+							            35.537487
+							          ],
+							          [
+							            139.792221,
+							            35.519909
+							          ],
+							          [
+							            139.785995,
+							            35.512035
+							          ],
+							          [
+							            139.686508,
+							            35.466354
+							          ],
+							          [
+							            139.678894,
+							            35.461521
+							          ],
+							          [
+							            139.667572,
+							            35.444157
+							          ],
+							          [
+							            139.671448,
+							            35.428856
+							          ],
+							          [
+							            139.669495,
+							            35.415928
+							          ],
+							          [
+							            139.660965,
+							            35.412453
+							          ],
+							          [
+							            139.647781,
+							            35.41848
+							          ],
+							          [
+							            139.630478,
+							            35.413151
+							          ],
+							          [
+							            139.616852,
+							            35.396393
+							          ],
+							          [
+							            139.618835,
+							            35.388294
+							          ],
+							          [
+							            139.622437,
+							            35.385136
+							          ],
+							          [
+							            139.623322,
+							            35.384441
+							          ],
+							          [
+							            139.621567,
+							            35.383545
+							          ],
+							          [
+							            139.622849,
+							            35.381989
+							          ],
+							          [
+							            139.622314,
+							            35.381542
+							          ],
+							          [
+							            139.624329,
+							            35.374405
+							          ],
+							          [
+							            139.633957,
+							            35.370266
+							          ],
+							          [
+							            139.629196,
+							            35.359493
+							          ],
+							          [
+							            139.629013,
+							            35.360626
+							          ],
+							          [
+							            139.626892,
+							            35.353493
+							          ],
+							          [
+							            139.626678,
+							            35.351856
+							          ],
+							          [
+							            139.6259,
+							            35.350899
+							          ],
+							          [
+							            139.625137,
+							            35.351658
+							          ],
+							          [
+							            139.623871,
+							            35.351715
+							          ]
+											]
+                    }
+                }
+            },
+            'layout': {
+                'line-join': 'round',
+                'line-cap': 'round'
+            },
+            'paint': {
+                'line-color': '#888',
+                'line-width': 8
+            }
+        });
+
+        map.addLayer({
+            'id': 'points',
+            'type': 'symbol',
+            'source': {
+                'type': 'geojson',
+                'data': {
+                    'type': 'FeatureCollection',
+                    'features': [
+                        {
+                            // feature for Start
+                            'type': 'Feature',
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [
+                                    139.766036,
+																		35.681669
+                                ]
+                            },
+                            'properties': {
+                                'title': 'Mapbox Start',
+                                'icon': 'monument'
+                            }
+                        },
+                        {
+                            // feature for Finish
+                            'type': 'Feature',
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [
+																	139.623864,
+																	35.351692
+																]
+                            },
+                            'properties': {
+                                'title': 'Mapbox Stop',
+                                'icon': 'harbor'
+                            }
+                        }
+                    ]
+                }
+            },
+            'layout': {
+                // get the icon name from the source's "icon" property
+                // concatenate the name to get an icon from the style's sprite sheet
+                'icon-image': ['concat', ['get', 'icon'], '-15'],
+                // get the title name from the source's "title" property
+                'text-field': ['get', 'title'],
+                'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+                'text-offset': [0, 0.6],
+                'text-anchor': 'top'
+            }
+        });
+
+
+        map.addSource("Waypoints", {
+                    "type": "geojson",
+                    "data": {
+                        "type": "FeatureCollection",
+                        "features": [{
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [
+																	139.766159,
+																	35.682625
+ 																]
+                                //<Start of your roadTrip>
+                              }
+                              },{
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [
+																	139.784943,
+																	35.548431
+																]
+                              }
+                              },{
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [
+																	139.623871,
+																	35.351715
+																]
+                            }
+                        }]
+                    }
+                });
+
+
+		var pointsLayerId = 'points'
+
+    map.addLayer({
+        "id": "waypoints",
+        "type": "circle",
+        "source": "Waypoints",
+        "paint": {
+            "circle-radius": 6,
+            "circle-color": "#B42222"
+        },
+        "filter": ["==", "$type", "Point"],
+    },
+		pointsLayerId
+	);
+
+    });
+
+</script>
+
+</body>
+</html>
