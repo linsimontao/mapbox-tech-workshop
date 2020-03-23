@@ -71,7 +71,7 @@
 ### コーディング
 1. テキストエディタを開いて、`Rordtrip.html`というファイルを保存します
 2. GLJSのExampleページに移動
-    https://docs.mapbox.com/mapbox-gl-js/example
+    https://docs.mapbox.com/mapbox-gl-js/examples
 
 1. マップ上にルートの線を引くサンプルを検索してみてください
 2. サンプルをペーストして、実行してみてください
