@@ -84,7 +84,6 @@
         }
     };
 
-
     map.on('load', function() {
             // Insert the layer beneath any symbol layer.
             var layers = map.getStyle().layers;
@@ -126,7 +125,6 @@
             }, labelLayerId);
       });
 
-
     map.on('click', 'starbucks-us-locations-lab1', function(e) {
         clickedCoordinates = e.features[0].geometry.coordinates
         map.flyTo({ center: clickedCoordinates });
@@ -152,9 +150,7 @@
                 "icon-image": "pulsing-dot"
             }
         });
-
     });
-
 
     map.on('click', 'landcover', function(e) {
                 map.removeLayer('points')
@@ -172,7 +168,7 @@
     map.on('mouseleave', 'starbucks-us-locations-lab1', function() {
         map.getCanvas().style.cursor = '';
     });
+
 </script>
 </body>
-
 </html>

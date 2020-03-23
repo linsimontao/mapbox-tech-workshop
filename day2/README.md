@@ -17,7 +17,7 @@ Mapbox GL JSを使ったコーディングと、SDKやAPIの利用について�
 
 ## テキストエディタにて
 1. 新規ファイルを作成
-1. 以下のコードを入力して下さい。（なるべくタイプしましょう。今回実施しない場合でも、以降のワークショップではタイプして下さい! ) 
+1. 以下のコードを入力して下さい。（なるべくタイプしましょう。今回実施しない場合でも、以降のワークショップではタイプして下さい! )
     ```
     <!DOCTYPE html>
     <html>
@@ -25,9 +25,9 @@ Mapbox GL JSを使ったコーディングと、SDKやAPIの利用について�
         <meta charset='utf-8' />
         <title>Display buildings in 3D</title>
         <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.js'></script>
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
         <script src='src/my.js'></script>
-        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.css' rel='stylesheet' />
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
         <style>
         body {
             margin: 0;
@@ -43,7 +43,7 @@ Mapbox GL JSを使ったコーディングと、SDKやAPIの利用について�
         </style>
     </head>
     ```
-    
+
 1. BodyとDivタグを追加しましょう（タイプしましょう 🙂 )
     ```
     <body>
@@ -77,7 +77,7 @@ Mapbox GL JSを使ったコーディングと、SDKやAPIの利用について�
 
 1. 次のコードをペーストしましょう。
     ```
-    var size = 200;
+        var size = 200;
         var clickedCoordinates = [0, 0];
 
         var pulsingDot = {
@@ -169,9 +169,13 @@ Mapbox GL JSを使ったコーディングと、SDKやAPIの利用について�
                     'fill-extrusion-opacity': .6
                 }
             }, labelLayerId);
+          });
     ```
 
 1. クリック機能を追加しましょう
+
+  - `starbucks-us-locations-test`の部分は前回追加したLayer名(LayerID)になります。
+
     ```
     map.on('click', 'starbucks-us-locations-test', function(e) {
                 clickedCoordinates = e.features[0].geometry.coordinates
@@ -203,6 +207,8 @@ Mapbox GL JSを使ったコーディングと、SDKやAPIの利用について�
     ```
 
 1. インタラクティブな要素を追加しましょう (タイプしましょう 🙂 )
+    - `starbucks-us-locations-test`の部分は前回追加したLayer名(LayerID)になります。
+
     ```
     map.on('click', 'landcover', function(e) {
                 map.removeLayer('points')
