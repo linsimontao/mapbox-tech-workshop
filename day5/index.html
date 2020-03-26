@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Lession 5: Display a map</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
+<script src='https://npmcdn.com/@turf/turf/turf.min.js' charset='utf-8'></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; };
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoidGljaGltdXJhIiwiYSI6ImNrMnBpN3NxMzA0bGMzbnBpdmhqd2EyazQifQ.5ozS730sMWdKGe5gx32BJA';
+
+		var map = new mapboxgl.Map({
+        container: 'map', // container id
+				style: 'mapbox://styles/mapbox/streets-v11',
+        // style: 'mapbox://styles/ealessandrini/ck0yf6jc90bxs1cn42cl477es?fresh=true``', // stylesheet location
+        center: [6.8373228831252675, 42.637225506552824], // starting position [lng, lat]
+        zoom:  3.8 // starting zoom
+    });
+
+		map.on("load", function() {
+
+	    map.addSource("itinerary", {
+          "type": "geojson",
+          "data": {
+              "type": "FeatureCollection",
+              "features": [{
+                  "type": "Feature",
+                  "geometry": {
+                      "type": "Point",
+                      "coordinates": [2.17694, 41.3825]
+                  },
+                  "properties": {
+                      "type": "origin",
+                      "nights": 3,
+                      "name": "Barcelona",
+											"country_name": "Spain"
+                  }
+              }, {
+                  "type": "Feature",
+                  "geometry": {
+                      "type": "Point",
+                      "coordinates": [2.35183, 48.85658]
+                  },
+                  "properties": {
+                      "type": "waypoint",
+                      "nights": 5,
+                      "name": "Paris",
+											"country_name": "France"
+                  }
+              }, {
+                  "type": "Feature",
+                  "geometry": {
+                      "type": "Point",
+                      "coordinates": [11.25417, 43.77139]
+                  },
+                  "properties": {
+                      "type": "destination",
+                      "nights": 2,
+                      "name": "Florence",
+											"country_name": "Italy"
+
+                  }
+              }]
+          }
+      });
+
+			map.addLayer({
+          "id": "itinerary-stops",
+          "type": "circle",
+          "source": "itinerary",
+          "paint": {
+              "circle-radius": 10,
+              'circle-color': [
+                  'match',
+                  ['get', 'type'],
+                  'origin', '#F72125',
+                  '#000A52'
+              ],
+              'circle-stroke-width': [
+                  'match',
+                  ['get', 'type'],
+                  'destination', 4,
+                  0.5
+              ],
+              'circle-stroke-color': [
+                  'match',
+                  ['get', 'type'],
+                  'destination', "#F72125",
+                  "#000000"
+              ]
+
+          }
+      });
+
+			var route = {
+			    "type": "FeatureCollection",
+			    "features": [{
+			        "type": "Feature",
+			        "geometry": {
+			            "type": "LineString",
+			            "coordinates": [
+			                [2.17694, 41.3825],
+			                [2.35183, 48.85658],
+			                [11.25417, 43.77139]
+			            ]
+			        }
+			    }]
+			};
+
+			var line = turf.lineString(route.features[0].geometry.coordinates, { name: 'itinerary' })
+
+			var bezier = turf.bezier(line)
+
+			var routeLineSource = {
+			            "type": "geojson",
+			            "data": {
+			                "type": "FeatureCollection",
+			                "features": [{
+			                    "type": "Feature",
+			                    "geometry": {
+			                        "type": "LineString",
+			                        "coordinates": bezier.geometry.coordinates
+			                    }
+			                }]
+			            }
+			        }
+
+	    map.addLayer({
+          "id": "routeLine",
+          "type": "line",
+          "source": routeLineSource,
+          "paint": {
+              "line-width": 1.5,
+              "line-color": "#000"
+          }
+      });
+
+			map.addSource('countries', {
+				'type': 'vector',
+				'url': 'mapbox://tichimura.ck5kgpt2r0dxq2tmn7vl4x0kc-44ac4'
+			});
+
+			// The feature-state dependent fill-opacity expression will render the hover effect
+	    // when a feature's hover state is set to true.
+	    map.addLayer({
+	        'id': 'country-fills',
+	        'type': 'fill',
+	        'source': 'countries',
+					'source-layer': 'francespainitaly',
+	        'layout': {},
+	        'paint': {
+	            'fill-color': '#627BC1',
+	            'fill-opacity': [
+	                'case',
+	                ['boolean', ['feature-state', 'hover'], false],
+	                1,
+	                0.5
+	            ]
+	        }
+				},
+					'itinerary-stops'
+	    );
+
+	    map.addLayer({
+	        'id': 'country-borders',
+	        'type': 'line',
+	        'source': 'countries',
+					'source-layer': 'francespainitaly',
+	        'layout': {},
+	        'paint': {
+	            'line-color': '#627BC1',
+	            'line-width': 2
+	        }
+	    	},
+				'itinerary-stops'
+			);
+
+		});
+
+		map.on('click', 'itinerary-stops', function(e) {
+				if (e.features.length > 0) {
+
+						map.setFilter('country-fills', [
+								'in',
+								'country_name',
+								e.features[0].properties.country_name
+						]);
+
+						var coordinates = e.features[0].geometry.coordinates.slice();
+
+						new mapboxgl.Popup()
+						.setLngLat(coordinates)
+						.setHTML(e.features[0].properties.name)
+						.addTo(map);
+
+				}
+		});
+
+
+		map.addControl(new mapboxgl.ScaleControl({position: 'bottom-right'}));
+
+</script>
+
+</body>
+</html>
