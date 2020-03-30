@@ -90,7 +90,8 @@
                         "properties": {
                             "type": "origin",
                             "nights": 3,
-                            "name": "Barcelona"
+                            "name": "Barcelona",
+                            "country_name": "Spain"
                         }
                     }, {
                         "type": "Feature",
@@ -101,7 +102,8 @@
                         "properties": {
                             "type": "waypoint",
                             "nights": 5,
-                            "name": "Paris"
+                            "name": "Paris",
+                            "country_name": "France"
                         }
                     }, {
                         "type": "Feature",
@@ -112,7 +114,8 @@
                         "properties": {
                             "type": "destination",
                             "nights": 2,
-                            "name": "Florence"
+                            "name": "Florence",
+                            "country_name": "Italy"
                         }
                     }]
                 }
