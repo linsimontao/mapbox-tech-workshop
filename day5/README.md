@@ -73,6 +73,8 @@
 
     出発地、経由地、最終地として、三つの都市を指定
     - 以下では、バルセロナ、パリ、フィレンツェを指定
+    
+    なお、上記 4の、`map.on("load", function() {` 以降に追記してください。
   　
     ```
     map.addSource("itinerary", {
@@ -216,8 +218,8 @@
 
   - 例1: 公開サイトなどから、データをインポートして編集
 
-  　- GeoJSON Maps of the globe
-  　https://geojson-maps.ash.ms/
+  　- GeoJSON Maps of the globe  
+  　https://geojson-maps.ash.ms/  
   　*領土も含まれるので注意（フランスの場合、ニューカレドニア、コルシカ島など）*
 
   - 例2: Mapbox StudioやQGISなどでGeoJSONを作成
