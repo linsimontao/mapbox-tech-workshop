@@ -29,8 +29,8 @@ Mapbox Studioを利用して、マップのデザインや、ウェブアプリ�
 ![](https://paper-attachments.dropbox.com/s_409822E5C193F50F3D9102DC2BEDC00A528737A25466437481175CBD03DE6048_1578640897293_image.png)
 
 7. CSVの場合は、ヘッダをチェックして、必要に応じて修正してください。終了後再度Uploadを試してみてください
-    https://docs.mapbox.com/help/troubleshooting/csv-upload-errors/
-    https://docs.mapbox.com/help/troubleshooting/uploads/
+    - https://docs.mapbox.com/help/troubleshooting/csv-upload-errors/
+    - https://docs.mapbox.com/help/troubleshooting/uploads/
 ![](https://paper-attachments.dropbox.com/s_409822E5C193F50F3D9102DC2BEDC00A528737A25466437481175CBD03DE6048_1578641245986_image.png)
 
 ![](https://paper-attachments.dropbox.com/s_409822E5C193F50F3D9102DC2BEDC00A528737A25466437481175CBD03DE6048_1578641279822_image.png)
@@ -47,10 +47,12 @@ Mapbox Studioを利用して、マップのデザインや、ウェブアプリ�
 
 10. 任意のポイントをクリックして、プロパティとGeoJSONフォーマットを確認してください
 
-| ![](https://paper-attachments.dropbox.com/s_409822E5C193F50F3D9102DC2BEDC00A528737A25466437481175CBD03DE6048_1578642131633_image.png) | ![](https://paper-attachments.dropbox.com/s_409822E5C193F50F3D9102DC2BEDC00A528737A25466437481175CBD03DE6048_1578642200039_image.png) |
-
+| プロパティの表示 | GeoJSONの表示 |
+|-|-|
+|![](https://paper-attachments.dropbox.com/s_409822E5C193F50F3D9102DC2BEDC00A528737A25466437481175CBD03DE6048_1578642131633_image.png)|![](https://paper-attachments.dropbox.com/s_409822E5C193F50F3D9102DC2BEDC00A528737A25466437481175CBD03DE6048_1578642200039_image.png) |
 
 11. ポリゴン(polygon)を描画し、以下の値を挿入
+
 ![](https://paper-attachments.dropbox.com/s_CBE5405AAD47D887439AD2718B584FF2A376280108350D5048B8F703EEF561B0_1566275525235_image.png)
 
 12. `Save`をクリックしたのち、`export`をクリック  
@@ -76,7 +78,6 @@ Studioのメイン画面に戻って、Light Templateを利用して新しいMap
 Streets, Light, Basicなどの任意のスタイルを選んでください。
 
 ![](https://paper-attachments.dropbox.com/s_409822E5C193F50F3D9102DC2BEDC00A528737A25466437481175CBD03DE6048_1578644013666_image.png)
-
 
 14. レイヤを追加して、先ほど作成したTilesetを選択して下さい
 
