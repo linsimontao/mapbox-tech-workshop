@@ -174,7 +174,7 @@ Mapbox GL JSを使ったコーディングと、SDKやAPIの利用について�
 
 1. クリック機能を追加しましょう
 
-  - `starbucks-us-locations-test`の部分は前回追加したLayer名(LayerID)になります。
+    `starbucks-us-locations-test`の部分は前回追加したLayer名(LayerID)になります。
 
     ```
     map.on('click', 'starbucks-us-locations-test', function(e) {
@@ -207,7 +207,7 @@ Mapbox GL JSを使ったコーディングと、SDKやAPIの利用について�
     ```
 
 1. インタラクティブな要素を追加しましょう (タイプしましょう 🙂 )
-    - `starbucks-us-locations-test`の部分は前回追加したLayer名(LayerID)になります。
+   `starbucks-us-locations-test`の部分は前回追加したLayer名(LayerID)になります。
 
     ```
     map.on('click', 'landcover', function(e) {
