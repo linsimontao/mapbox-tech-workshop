@@ -25,9 +25,9 @@ Mapbox GL JSを使ったコーディングと、SDKやAPIの利用について�
         <meta charset='utf-8' />
         <title>Display buildings in 3D</title>
         <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
         <script src='src/my.js'></script>
-        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
         <style>
         body {
             margin: 0;
