@@ -23,7 +23,7 @@ Mapbox GL JSを使ったコーディングと、SDKやAPIの利用について�
     <html>
     <head>
         <meta charset='utf-8' />
-        <title>Display buildings in 3D</title>
+        <title>Display starbucks in US</title>
         <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
         <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css' rel='stylesheet' />
         <style>
@@ -79,7 +79,7 @@ Mapbox GL JSを使ったコーディングと、SDKやAPIの利用について�
 
     ```
     map.on('click', 'starbucks-us-locations-test', function(e) {
-                clickedCoordinates = e.features[0].geometry.coordinates
+                const clickedCoordinates = e.features[0].geometry.coordinates
                 map.flyTo({ center: clickedCoordinates });
                 
                 new mapboxgl.Popup()
